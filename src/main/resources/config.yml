@@ -1,0 +1,17 @@
+stone: 200
+coal: 30
+lapis: 20
+copper: 15
+iron: 10
+gold: 5
+emerald: 3
+diamond: 2
+
+deep_stone: 100
+deep_coal: 30
+deep_lapis: 20
+deep_copper: 15
+deep_iron: 10
+deep_gold: 5
+deep_emerald: 3
+deep_diamond: 2
