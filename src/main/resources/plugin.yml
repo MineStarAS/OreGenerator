@@ -5,3 +5,4 @@ api-version: 1.17
 authors: [ MineStar ]
 commands:
   oregen:
+    aliases: [ 광물생성 ]

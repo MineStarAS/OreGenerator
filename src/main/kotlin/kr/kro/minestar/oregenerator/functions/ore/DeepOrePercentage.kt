@@ -45,38 +45,30 @@ object DeepOrePercentage {
         return Material.STONE
     }
 
-    fun total(): Int {
+    private fun total(): Int {
         var total = 0
         for (int in map.values) total += int
         return total
     }
 
     fun checkPercent(player: Player) {
-        val countMap = hashMapOf(
-            Pair(Material.DEEPSLATE, 0),
-            Pair(Material.DEEPSLATE_COAL_ORE, 0),
-            Pair(Material.DEEPSLATE_LAPIS_ORE, 0),
-            Pair(Material.DEEPSLATE_COPPER_ORE, 0),
-            Pair(Material.DEEPSLATE_IRON_ORE, 0),
-            Pair(Material.DEEPSLATE_GOLD_ORE, 0),
-            Pair(Material.DEEPSLATE_EMERALD_ORE, 0),
-            Pair(Material.DEEPSLATE_DIAMOND_ORE, 0),
+        val oreList = listOf(
+            Material.DEEPSLATE,
+            Material.DEEPSLATE_COAL_ORE,
+            Material.DEEPSLATE_LAPIS_ORE,
+            Material.DEEPSLATE_COPPER_ORE,
+            Material.DEEPSLATE_IRON_ORE,
+            Material.DEEPSLATE_GOLD_ORE,
+            Material.DEEPSLATE_EMERALD_ORE,
+            Material.DEEPSLATE_DIAMOND_ORE,
         )
-        val count = Random.nextInt(1000) * 1000
-        for (int in 1..count) {
-            val material = getOre()
-            countMap[material] = countMap[material]!! + 1
-        }
         val total = total()
         " ".toPlayer(player)
-        "§c${javaClass.simpleName} total - $total".toPlayer(player)
-        "§9Check count - §b$count".toPlayer(player)
-        for (m in countMap) {
-            val material = m.key
-            val percent = (m.value / count.toDouble() * 100).round(3)
-            val default = map[m.key] ?: 0
+        "§9${javaClass.simpleName} total §f- §b$total".toPlayer(player)
+        for (material in oreList) {
+            val default = map[material] ?: 0
             val defaultPercent = (default / total.toDouble() * 100).round(3)
-            "§6$material §f| §e${m.value} §f| §a$percent% §f| §b$default §f| §d$defaultPercent%".toPlayer(player)
+            "§6$material §f| §e$default §f| §a$defaultPercent%".toPlayer(player)
         }
     }
 }
