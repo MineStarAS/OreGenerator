@@ -7,7 +7,7 @@ plugins {
 
 group = "kr.kro.minestar"
 version = "1.0.0"
-val plugins = File("C:\\Users\\MineStar\\Desktop\\MC Server folder\\MCserver 1.18.1 - MineFarm\\plugins")
+val plugins = File("C:\\Users\\MineStar\\Desktop\\MC Server folder\\MCserver 1.18.1 - MineFarmWorld\\plugins")
 
 repositories {
     mavenCentral()
@@ -20,13 +20,13 @@ repositories {
 
 dependencies {
     implementation(kotlin("stdlib"))
-    compileOnly("net.kyori:adventure-api:4.9.3")
+    compileOnly("net.kyori:adventure-api:4.10.1")
     compileOnly("io.papermc.paper:paper-api:1.18.1-R0.1-SNAPSHOT")
 
     //project_TL
 
     //MineStar
-    compileOnly("kr.kro.minestar:Utility-API:1.6.1")
+    implementation("kr.kro.minestar:Utility-API:1.6.3")
 }
 
 java {
